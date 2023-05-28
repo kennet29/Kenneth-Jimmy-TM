@@ -1,20 +1,44 @@
+//@ts-check
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View ,TextInput} from 'react-native';
+import {Principal} from './styles/main_style'; 
+
+import React from 'react';
+import {Form} from './Form'; 
+
+class Cliente {
+  constructor(props) {
+    for (const key in props) {
+      this[key] = props[key];
+    }
+  }
+  name = undefined;
+}
+
+/**@type {Array<Cliente>} */
+const dataset = [
+  new Cliente({ name: "name 1" }),
+  new Cliente({ name: "name 2" }),
+  new Cliente({ name: "name 3" }),
+  new Cliente({ name: "name 4" }),
+];
+
+const model = {
+  prop1: { type: 'TEXT' },
+  prop2: { type: 'DATE' },
+  prop3: { type: 'PASSWORD' },
+  
+};
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View  style={Principal.Main}> 
+      <Text >TEST COMPONENT</Text> {}
+      
+      <Form model={model} />
+      
+    
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

@@ -1,0 +1,22 @@
+@startuml
+
+participant SGBD
+participant CapaDatos
+participant CapaNegocio
+participant API_REST
+participant  UI
+
+UI -->API_REST
+
+alt BACKEND
+API_REST-->CapaNegocio
+CapaNegocio--> CapaNegocio:Operaciones
+CapaNegocio--> CapaNegocio:Servicios
+CapaNegocio-->CapaDatos:Lee y escribe Datos
+CapaDatos<--> SGBD
+CapaDatos-->CapaDatos:Procesa los Datos
+CapaDatos-->CapaNegocio:con los datos procesados
+CapaNegocio-->API_REST
+end
+
+@enduml
