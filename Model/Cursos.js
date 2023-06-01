@@ -1,4 +1,5 @@
 //@ts-check
+import ModelProperty from "./CommomModel";
 import { EntityClass } from "./components/Entitys/Entityclass";
 class Cursos extends EntityClass {
     /**
@@ -24,3 +25,22 @@ class Cursos extends EntityClass {
    
 }
 export {Cursos}
+
+
+
+class CursosModel
+{
+    /**@type {ModelProperty} */
+    Codigo_curso={type:"text"};
+    /**@type {ModelProperty} */
+    Programa = {type:"text"};
+    /**@type {ModelProperty} */
+    HorasDuracion = {type:"text"};
+    /**@type {ModelProperty} */
+    Nombre = {type:"text"};
+    /**@type {ModelProperty} */
+    Dni_Profesor = {type:"text"};
+
+
+
+}export{CursosModel}

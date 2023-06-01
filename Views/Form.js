@@ -1,10 +1,10 @@
 //@ts-check
 import React, { Component } from 'react';
 import { Text, View , TextInput, Button} from 'react-native';
-import { Principal } from './styles/main_style';
+import { Principal } from '../styles/main_style';
 import { Calendar } from 'react-native-calendars';
 // @ts-ignore
-import {ModelProperty} from './Model/CommomModel'
+import {ModelProperty} from '../Model/CommomModel';
 
 class Form extends Component {
     constructor(props) {
@@ -51,7 +51,7 @@ function constructControlFromModel(propName, prop, value, onChangeText) {
       return (
         <View style={Principal.Centrado}>
           <Text>Name</Text>
-          <TextInput placeholder='Ingrese su Nombre'
+          <TextInput placeholder={propName.toString()}
             style={Principal.input}
             onChangeText={value => onChangeText(value, propName)}
             value={value}

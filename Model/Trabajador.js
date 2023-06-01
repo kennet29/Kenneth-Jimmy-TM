@@ -1,4 +1,5 @@
-//@ts-check
+//@ts-checkts-check
+import ModelProperty from "./CommomModel";
 import { EntityClass } from "./components/Entitys/Entityclass";
 class Trabajador extends EntityClass {
     /**
@@ -19,3 +20,15 @@ class Trabajador extends EntityClass {
    
 }
 export {Trabajador}
+
+class TrabajadorModel
+{
+
+/**@type {ModelProperty} */
+DNI_Alumno={type:"text"};
+/**@type {Mod} */
+CIF_Empresa = {type:"text"};
+
+
+
+}export{TrabajadorModel}

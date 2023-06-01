@@ -1,10 +1,11 @@
 //@ts-check
-import { StatusBar } from 'expo-status-bar';
-import { Text, View ,TextInput} from 'react-native';
-import {Principal} from './styles/main_style'; 
-
-import React from 'react';
-import {Form} from './Form'; 
+import { StatusBar } from "expo-status-bar";
+import { Text, View, TextInput } from "react-native";
+import { Principal } from "./styles/main_style";
+import { Login } from "./Views/Login";
+import React from "react";
+import { Form } from "./Views/Form";
+import { ProfesoresModel } from "./Model/Profesores";
 
 class Cliente {
   constructor(props) {
@@ -24,21 +25,14 @@ const dataset = [
 ];
 
 const model = {
-  prop1: { type: 'TEXT' },
-  prop2: { type: 'DATE' },
-  prop3: { type: 'PASSWORD' },
-  
+  prop1: { type: "TEXT" },
+  prop3: { type: "PASSWORD" },
 };
-
 
 export default function App() {
   return (
-    <View  style={Principal.Main}> 
-      <Text >TEST COMPONENT</Text> {}
-      
-      <Form model={model} />
-      
-    
+    <View style={Principal.Main}>
+      <Form model={new ProfesoresModel()}  />
     </View>
   );
 }
