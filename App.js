@@ -1,38 +1,36 @@
-//@ts-check
 import { StatusBar } from "expo-status-bar";
-import { Text, View, TextInput } from "react-native";
-import { Principal } from "./styles/main_style";
-import { Login } from "./Views/Login";
-import React from "react";
-import { Form } from "./Views/Form";
-import { ProfesoresModel } from "./Model/Profesores";
+import { Text, View, TextInput, StyleSheet } from "react-native";
+import React from 'react';
 
-class Cliente {
-  constructor(props) {
-    for (const key in props) {
-      this[key] = props[key];
-    }
-  }
-  name = undefined;
-}
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from "./Views/components/Navbr";
 
-/**@type {Array<Cliente>} */
-const dataset = [
-  new Cliente({ name: "name 1" }),
-  new Cliente({ name: "name 2" }),
-  new Cliente({ name: "name 3" }),
-  new Cliente({ name: "name 4" }),
-];
 
-const model = {
-  prop1: { type: "TEXT" },
-  prop3: { type: "PASSWORD" },
-};
-
+const Stack = createStackNavigator();
 export default function App() {
   return (
-    <View style={Principal.Main}>
-      <Form model={new ProfesoresModel()}  />
-    </View>
+    
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+    justifyContent: 'center',
+    alignItems: "center",
+    backgroundColor: '#FFFF00',},
+  input: {
+    marginBottom: 16,
+  },
+  button: {
+    marginTop: 16,
+  },
+});
