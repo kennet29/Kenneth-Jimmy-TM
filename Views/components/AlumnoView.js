@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
-import HomeScreen from './HomeScreen';
-import  AlumnosModel  from '../../Model/Cursos/Alumno';
+
+import  Alumnos from "../../Model/Alumno"
 
 
-const CursoView = () => {
+const alumnoView = () => {
   return (
    
    
@@ -13,4 +13,4 @@ const CursoView = () => {
   );
 };
 
-export default CursoViewVista;
+export default alumnoView;

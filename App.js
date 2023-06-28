@@ -1,23 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, View, TextInput, StyleSheet } from "react-native";
 import React from 'react';
-
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from "./Views/components/Navbr";
-
+import Navigation from "./Views/components/Navigation";
 
 const Stack = createStackNavigator();
 export default function App() {
-  return (
-    
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    
-  );
+  return <Navigation />;
 }
 
 const styles = StyleSheet.create({

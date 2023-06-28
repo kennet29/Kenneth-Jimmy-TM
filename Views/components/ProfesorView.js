@@ -4,7 +4,7 @@ import HomeScreen from './HomeScreen';
 import ProfesoresModel  from '../../Model/Cursos/ProfesoresModel';
 
 
-const CursoView = () => {
+const profesorView = () => {
   return (
    
    
@@ -13,4 +13,4 @@ const CursoView = () => {
   );
 };
 
-export default CursoViewVista;
+export default profesorView;
