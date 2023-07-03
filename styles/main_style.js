@@ -36,6 +36,18 @@ const Principal = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+
+  text_style:{
+    fontSize: '16px',
+    color: 'red',
+    fontWeight: 'bold',
+  },
+  controlsStyle :{
+    backgroundColor: 'blue',
+    color: 'white',
+    padding: '10px',
+    borderRadius: '5px',
+  },
   input:
   {
     height: 40,

@@ -24,6 +24,7 @@
     "react-native-datepicker": "^1.7.2",
     "react-native-paper": "^5.8.0",
     "react-native-web": "~0.18.10",
+    "react-navigation": "^4.4.4",
     "react-navigation-stack": "^2.10.4"
   },
   "devDependencies": {

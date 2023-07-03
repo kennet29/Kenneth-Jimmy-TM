@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View , TextInput, Button} from 'react-native';
-import { Principal } from '../styles/main_style';
-import { Calendar } from 'react-native-calendars';
-// @ts-ignore
-import { ModelProperty } from '../Model/CommomModel';
+import { Text, View, TextInput, Button } from 'react-native';
 
 class Form extends Component {
   constructor(props) {
@@ -30,14 +26,31 @@ class Form extends Component {
     return (
       <View style={styles.container}>
         {this.controls}
-        <Button
-          title="Save"
-          onPress={() => this.props.onSave(this.editObject)}
-        />
+        <View style={styles.buttonContainer}>
+          <View style={styles.buttonWrapper}>
+            <Button
+              title="Guardar"
+              onPress={() => this.props.onSave(this.editObject)}
+            />
+          </View>
+          <View style={styles.buttonWrapper}>
+            <Button
+              title="Editar"
+              onPress={() => this.props.onEdit(this.editObject)}
+            />
+          </View>
+          <View style={styles.buttonWrapper}>
+            <Button
+              title="Borrar"
+              onPress={() => this.props.onDelete(this.editObject)}
+            />
+          </View>
+        </View>
       </View>
     );
   }
 }
+
 
 /**
  * @param {String} propName
@@ -97,6 +110,7 @@ const styles = {
     padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
+    background: 'linear-gradient(45deg, #880E4F, #1A237E)',
   },
   inputContainer: {
     marginBottom: 20,
@@ -105,18 +119,32 @@ const styles = {
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 5,
+    color: 'white',
+  },
+  buttonCrud: {
+    marginVertical: 20,
+    padding: 20,
   },
   input: {
     width: '100%',
     height: 40,
     borderWidth: 1,
     borderColor: '#ccc',
-    borderRadius: 5,
+    borderRadius: 20,
+    color: 'white',
     paddingLeft: 10,
   },
   calendarContainer: {
     marginBottom: 20,
   },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 20,
+  },
+  buttonWrapper: {
+    marginHorizontal: 10,
+  },
 };
 
-export { Form };
+export default Form;

@@ -1,7 +1,7 @@
 //@ts-check
 import React, { Component } from 'react';
 import { Text, View , TextInput} from 'react-native';
-import { controls, text_style } from '../styles/main_styles';
+
 // @ts-ignore
 import { ModelPropierty } from '../MODEL/CommonModel';
 
@@ -48,7 +48,7 @@ function constructControlFromModel(propName, prop, value, onChangeText) {
     if (prop.type.toUpperCase() == "TEXT") {
         return (
             <View>
-                <Text style={text_style.header2}>{propName}</Text>
+                <Text >{propName}</Text>
                 <TextInput
                     style={controls.input}
                     onChangeText={ value => onChangeText(value, propName) }
@@ -65,3 +65,23 @@ function constructControlFromModel(propName, prop, value, onChangeText) {
     }
 }
 export { Form };
+
+const text_style = {
+    header2: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      marginBottom: 10,
+    },
+  };
+  
+  const controls = {
+    input: {
+      height: 40,
+      borderColor: 'gray',
+      borderWidth: 1,
+      borderRadius: 5,
+      paddingHorizontal: 10,
+      marginBottom: 10,
+    },
+  };
+  

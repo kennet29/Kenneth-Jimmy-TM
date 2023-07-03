@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import TrabajadorModel  from '../../Model/Cursos/TrabajadorModel';
+import TrabajadorModel  from '../../Model/Trabajador';
 
 
 const trabajadorView = () => {

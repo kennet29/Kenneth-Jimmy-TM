@@ -44,4 +44,4 @@ class InfoCursoModel  {
     Nota_Final = {type:"text"};
    
 }
-export {InfoCursoModel}
+export default InfoCursoModel;

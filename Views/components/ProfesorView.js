@@ -1,16 +1,16 @@
 import React from 'react';
 import { View } from 'react-native';
-import HomeScreen from './HomeScreen';
-import ProfesoresModel  from '../../Model/Cursos/ProfesoresModel';
+import Form from "../Form";
+import ProfesoresModel  from '../../Model/Profesores';
 
 
 const profesorView = () => {
   return (
    
-   
+   <View>
       <Form model = {new ProfesoresModel()}></Form>
-    
+      </View>
   );
 };
 
-export default profesorView;
+export  default profesorView;

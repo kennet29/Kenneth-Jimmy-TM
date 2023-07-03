@@ -1,15 +1,16 @@
 import React from 'react';
 import { View } from 'react-native';
-import HomeScreen from './HomeScreen';
-import EmpresasModel from '../../Model/Cursos/EmpresasModel';
+import Form from "../Form"; 
+import EmpresasModel from '../../Model/Empresas';
 
 
 const empresaView = () => {
   return (
    
+   <View>
+ <Form model = {new EmpresasModel()}></Form>
+   </View>
    
-      <Form model = {new EmpresasModel()}></Form>
-    
   );
 };
 

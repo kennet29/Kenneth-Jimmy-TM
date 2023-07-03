@@ -38,4 +38,4 @@ class ProfesoresModel {
   /**@type {ModelProperty} */
   Telefono = { type: "text" };
 }
-export { ProfesoresModel };
+export default ProfesoresModel ;

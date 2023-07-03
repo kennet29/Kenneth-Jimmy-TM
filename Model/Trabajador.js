@@ -31,4 +31,4 @@ CIF_Empresa = {type:"text"};
 
 
 
-}export{TrabajadorModel}
+}export default TrabajadorModel;
