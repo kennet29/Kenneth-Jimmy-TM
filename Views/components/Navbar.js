@@ -5,28 +5,40 @@ import { useNavigation } from '@react-navigation/native';
 const Navbar = () => {
   const navigation = useNavigation();
 
-  const navigateToInicio = () => {
-    navigation.navigate('Inicio');
+  const navigateToAlumnos = () => {
+    navigation.navigate('Alumnos');
   };
 
-  const navigateToExplorar = () => {
-    navigation.navigate('Explorar');
+  const navigateToEmpresas = () => {
+    navigation.navigate('Empresas');
   };
 
   const navigateToPerfil = () => {
     navigation.navigate('Perfil');
   };
+  const navigateToProfesores = () => {
+    navigation.navigate('Profesores');
+  };
+  const navigateToInfoCurso = () => {
+    navigation.navigate('Informacion_Cursos');
+  };
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={navigateToInicio}>
-        <Text style={styles.buttonText}>Inicio</Text>
+    <View style={styles.container} >
+      <TouchableOpacity style={styles.button} onPress={navigateToAlumnos}>
+        <Text style={styles.buttonText}>Alumnos</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={navigateToExplorar}>
-        <Text style={styles.buttonText}>Explorar</Text>
+      <TouchableOpacity style={styles.button} onPress={navigateToEmpresas}>
+        <Text style={styles.buttonText}>Empresas</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={navigateToPerfil}>
-        <Text style={styles.buttonText}>Perfil</Text>
+        <Text style={styles.buttonText}>Cursos</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={navigateToProfesores}>
+        <Text style={styles.buttonText}>Profesores</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={navigateToInfoCurso}>
+        <Text style={styles.buttonText}>Info. Curso</Text>
       </TouchableOpacity>
     </View>
   );
@@ -37,7 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
-    backgroundColor:'#000',
+    backgroundColor:'#3C3C3C',
   },
   button: {
     width: 200,
@@ -46,10 +58,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#000',
     borderRadius:5,
-    backgroundColor: '#005B60',
+    backgroundColor: '#1E90FF',
   },
   buttonText: {
-    fontSize: 16,
+    fontStyle:"italic",
+    fontSize: 22,
     fontWeight: 'bold',
     color: '#fff',
     textAlign: 'center',

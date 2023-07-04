@@ -6,27 +6,34 @@ import Navbar from './Views/components/Navbar';
 import AlumnosViews from "./Views/components/AlumnoView";
 import EmpresaView from "./Views/components/EmpresaView";
 import CursoView from "./Views/components/CursoView";
+import ProfesoresView from "./Views/components/ProfesorView"
+import cursoinfoView from './Views/components/CursoInfoView';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Navbar" headerMode="screen">
-        <Stack.Screen style={{backgroundColor:'darkred'}}
+    <NavigationContainer >
+      <Stack.Navigator initialRouteName="Navbar" headerMode="screen" >
+    
+        <Stack.Screen 
           name="Navbar"
+          style={{background: 'darkred'}}
           component={Navbar}
           options={{
             headerTitle: (props) => (
-              <Text style={{ fontSize: 24, fontWeight: 'bold' }}>
+              <Text style={{ fontSize: 24, fontWeight: 'bold',  }}>
                 Registro Académico
               </Text>
             ),
           }}
         />
-        <Stack.Screen name="Inicio" component={AlumnosViews} />
-        <Stack.Screen name="Explorar" component={EmpresaView} />
+        
+        <Stack.Screen name="Alumnos" component={AlumnosViews} />
+        <Stack.Screen name="Empresas" component={EmpresaView} />
         <Stack.Screen name="Perfil" component={CursoView} />
+        <Stack.Screen name="Profesores" component={ProfesoresView} />
+        <Stack.Screen name="Informacion_Cursos" component={cursoinfoView} />
       </Stack.Navigator>
       <StatusBar />
     </NavigationContainer>
