@@ -31,12 +31,14 @@ class Form extends Component {
             <Button
               title="Guardar"
               onPress={() => this.props.onSave(this.editObject)}
+
             />
           </View>
           <View style={styles.buttonWrapper}>
             <Button
               title="Editar"
               onPress={() => this.props.onEdit(this.editObject)}
+              
             />
           </View>
           <View style={styles.buttonWrapper}>

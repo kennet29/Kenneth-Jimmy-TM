@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 import Form from "../Form";
-import  InfoCursoModel  from '../../Model/InfoCurso';
+import  InfoCursoModel  from '../../Model/FechaCursosModel';
 
 
-const cursoinfoView = () => {
+const Asistencia = () => {
   return (
    
    <View>
@@ -15,4 +15,4 @@ const cursoinfoView = () => {
   );
 };
 
-export default cursoinfoView;
+export default Asistencia;

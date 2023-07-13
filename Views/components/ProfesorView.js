@@ -1,10 +1,13 @@
 import React from 'react';
 import { View } from 'react-native';
 import Form from "../Form";
-import ProfesoresModel  from '../../Model/Profesores';
+import { Profesores,ProfesoresModel}  from '../../Model/Profesores';
 
 
 const profesorView = () => {
+  const save = ( /**@type{Profesores}*/profesor) => {
+    profesor.save();
+  }
   return (
    
    <View>

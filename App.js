@@ -7,7 +7,7 @@ import AlumnosViews from "./Views/components/AlumnoView";
 import EmpresaView from "./Views/components/EmpresaView";
 import CursoView from "./Views/components/CursoView";
 import ProfesoresView from "./Views/components/ProfesorView"
-import cursoinfoView from './Views/components/CursoInfoView';
+import FechaCursosView from './Views/components/FechaCursosView';
 
 const Stack = createStackNavigator();
 
@@ -33,7 +33,7 @@ export default function App() {
         <Stack.Screen name="Empresas" component={EmpresaView} />
         <Stack.Screen name="Perfil" component={CursoView} />
         <Stack.Screen name="Profesores" component={ProfesoresView} />
-        <Stack.Screen name="Informacion_Cursos" component={cursoinfoView} />
+        <Stack.Screen name="Informacion_Cursos" component={FechaCursosView} />
       </Stack.Navigator>
       <StatusBar />
     </NavigationContainer>

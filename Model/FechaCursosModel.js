@@ -1,7 +1,7 @@
 //@ts-check
 import ModelProperty from "./CommomModel";
 import { EntityClass } from "./components/Entitys/Entityclass";
-class InfoCurso extends EntityClass {
+class FechaCursos extends EntityClass {
     /**
      *
      * @param {Object} [props]
@@ -26,9 +26,9 @@ class InfoCurso extends EntityClass {
     Nota_Final = undefined;
    
 }
-export {InfoCurso}
+export {FechaCursos}
 
-class InfoCursoModel  {
+class FechaCursosModel  {
   
     /**@type {ModelProperty} */
     DNI_Alumno={type:"text"};
@@ -44,4 +44,4 @@ class InfoCursoModel  {
     Nota_Final = {type:"text"};
    
 }
-export default InfoCursoModel;
+export default FechaCursosModel;
