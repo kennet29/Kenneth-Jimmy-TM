@@ -38,4 +38,4 @@ class EmpresasModel  {
     Direccion = {type:"text"};
    
 }
-export default EmpresasModel;
+export { EmpresasModel};

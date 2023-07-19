@@ -44,4 +44,4 @@ class FechaCursosModel  {
     Nota_Final = {type:"text"};
    
 }
-export default FechaCursosModel;
+export  {FechaCursosModel};

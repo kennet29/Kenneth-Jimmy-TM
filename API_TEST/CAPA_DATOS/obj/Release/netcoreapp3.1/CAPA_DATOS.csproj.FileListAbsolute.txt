@@ -1,0 +1,10 @@
+C:\Users\Kennet\Downloads\API_TEST\CAPA_DATOS\bin\Release\netcoreapp3.1\CAPA_DATOS.deps.json
+C:\Users\Kennet\Downloads\API_TEST\CAPA_DATOS\bin\Release\netcoreapp3.1\CAPA_DATOS.dll
+C:\Users\Kennet\Downloads\API_TEST\CAPA_DATOS\bin\Release\netcoreapp3.1\CAPA_DATOS.pdb
+C:\Users\Kennet\Downloads\API_TEST\CAPA_DATOS\obj\Release\netcoreapp3.1\CAPA_DATOS.csproj.AssemblyReference.cache
+C:\Users\Kennet\Downloads\API_TEST\CAPA_DATOS\obj\Release\netcoreapp3.1\CAPA_DATOS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kennet\Downloads\API_TEST\CAPA_DATOS\obj\Release\netcoreapp3.1\CAPA_DATOS.AssemblyInfoInputs.cache
+C:\Users\Kennet\Downloads\API_TEST\CAPA_DATOS\obj\Release\netcoreapp3.1\CAPA_DATOS.AssemblyInfo.cs
+C:\Users\Kennet\Downloads\API_TEST\CAPA_DATOS\obj\Release\netcoreapp3.1\CAPA_DATOS.csproj.CoreCompileInputs.cache
+C:\Users\Kennet\Downloads\API_TEST\CAPA_DATOS\obj\Release\netcoreapp3.1\CAPA_DATOS.dll
+C:\Users\Kennet\Downloads\API_TEST\CAPA_DATOS\obj\Release\netcoreapp3.1\CAPA_DATOS.pdb

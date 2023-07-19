@@ -1,15 +1,16 @@
 import React from 'react';
 import { View } from 'react-native';
-
-import { CursosModel } from '../../Model/Cursos';
+import Form from '../Form';
+import { CursosModel,Cursos } from '../../Model/Cursos';
 
 
 const cursoView = () => {
+  const save =(/**@type{Curso}*/curso) =>
+  {
+    curso.save();
+  }
   return (
-   
-   
-      <Form model = {new CursosModel()}></Form>
-    
+      <Form model = {new CursosModel()}  editObject={new Cursos()} />
   );
 };
 

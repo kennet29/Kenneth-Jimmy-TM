@@ -15,7 +15,7 @@ class Alumnos extends EntityClass {
     /**@type {String | undefined} */
     DNI=undefined;
     /**@type {String | undefined} */
-    Dirreccion = undefined;
+    Direccion = undefined;
     /**@type {String | undefined} */
     Telefono = undefined;
     /**@type {String | undefined} */
@@ -32,9 +32,9 @@ class AlumnosModel
   /**@type {ModelProperty} */
   DNI={type:"text"};
   /**@type {ModelProperty} */
-  Dirreccion = {type:"text"};
+  Dirección = {type:"text"};
   /**@type {ModelProperty} */
-  Telefono = {type:"text"};
+  Teléfono = {type:"text"};
   /**@type {ModelProperty} */
   Nombre = {type:"text"};
   /**@type {ModelProperty} */

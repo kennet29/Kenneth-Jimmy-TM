@@ -11,7 +11,7 @@ const profesorView = () => {
   return (
    
    <View>
-      <Form model = {new ProfesoresModel()}></Form>
+      <Form model = {new ProfesoresModel()} editObject={new Profesores()} />
       </View>
   );
 };
