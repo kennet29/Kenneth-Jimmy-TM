@@ -8,11 +8,14 @@ import EmpresaView from "./Views/components/EmpresaView";
 import CursoView from "./Views/components/CursoView";
 import ProfesoresView from "./Views/components/ProfesorView"
 import FechaCursosView from './Views/components/FechaCursosView';
+import Index_Alumnos from './Views/IndexViews/index_Alumnos';
+import index_Empresas from './Views/IndexViews/index_Empresas';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
+    
     <NavigationContainer >
       <Stack.Navigator initialRouteName="Navbar" headerMode="screen" >
     
@@ -29,8 +32,8 @@ export default function App() {
           }}
         />
         
-        <Stack.Screen name="Alumnos" component={AlumnosViews} />
-        <Stack.Screen name="Empresas" component={EmpresaView} />
+        <Stack.Screen name="Alumnos" component={Index_Alumnos} />
+        <Stack.Screen name="Empresas" component={index_Empresas} />
         <Stack.Screen name="Perfil" component={CursoView} />
         <Stack.Screen name="Profesores" component={ProfesoresView} />
         <Stack.Screen name="Informacion_Cursos" component={FechaCursosView} />
@@ -38,4 +41,5 @@ export default function App() {
       <StatusBar />
     </NavigationContainer>
   );
+  
 }

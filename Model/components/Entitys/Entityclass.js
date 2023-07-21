@@ -1,4 +1,4 @@
-const url = "https://192.168.162.37:44335/api/";
+const url = "https://192.168.162.37:5001/api/";
 class EntityClass {
   save = async () => {
     const response = await fetch(url, {
@@ -11,13 +11,14 @@ class EntityClass {
     });
     const responseTest = await response.json();
   };
+   obtenerAlumnos = async () => {
+    const response = await fetch(`${url}Alumnos`);
+    const data = await response.json();
+    return data;
+  };
+  
 }
 
-const obtenerAlumnos = async () => {
-  const response = await fetch(`${url}Alumnos`);
-  const data = await response.json();
-  return data;
-};
 
 const obtenerAlumnoPorDNI = async (dni) => {
   const response = await fetch(`${url}Alumno/${dni}`);
