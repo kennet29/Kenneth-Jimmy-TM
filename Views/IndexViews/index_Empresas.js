@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const IndexEmpresas = () => {
+const Index_Empresas = () => {
   const [empresas, setEmpresas] = useState([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     fetch('https://localhost:5001/api/Empresa')
@@ -13,12 +15,17 @@ const IndexEmpresas = () => {
 
   const handleEditar = (empresa) => {
     // Lógica para editar la empresa con la información de 'empresa'
-    console.log('Editar empresa:', empresa);
+    navigation.navigate('EditEmpresaView', { empresaData: empresa });
   };
 
   const handleBorrar = (cif) => {
     // Lógica para borrar la empresa con el CIF 'cif'
     console.log('Borrar empresa con CIF:', cif);
+  };
+
+  const handleCrear = () => {
+    // Navegar a la vista para crear una nueva empresa
+    navigation.navigate('CrearEmpresaView');
   };
 
   const renderEmpresa = ({ item, index }) => (
@@ -50,7 +57,7 @@ const IndexEmpresas = () => {
   );
 
   const windowHeight = Dimensions.get('window').height;
-  const tableHeight = windowHeight * 0.8; // Tabla ocupa el 80% de la altura de la pantalla
+  const tableHeight = windowHeight * 0.8;
 
   return (
     <View style={styles.container}>
@@ -68,6 +75,9 @@ const IndexEmpresas = () => {
           keyExtractor={(item) => item.CIF}
         />
       </View>
+      <TouchableOpacity style={styles.crearButton} onPress={handleCrear}>
+        <Text style={styles.crearButtonText}>Crear Empresa</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -87,7 +97,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#1abc9c', // Color azul turquesa
+    backgroundColor: '#1abc9c',
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
@@ -128,11 +138,23 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   par: {
-    backgroundColor: '#f2f2f2', // Color para filas pares
+    backgroundColor: '#f2f2f2',
   },
   impar: {
-    backgroundColor: '#fff', // Color para filas impares
+    backgroundColor: '#fff',
+  },
+  crearButton: {
+    backgroundColor: '#2ecc71',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 5,
+    marginTop: 10,
+  },
+  crearButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 
-export default IndexEmpresas;
+export default Index_Empresas;

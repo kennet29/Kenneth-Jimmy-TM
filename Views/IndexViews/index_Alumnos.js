@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
-import alumnoView from '../components/AlumnoView';
+
 const url = 'https://localhost:5001/api/Alumnos';
 
 const Index_Alumnos = () => {
@@ -22,15 +22,23 @@ const Index_Alumnos = () => {
     }
   };
 
-  const editarAlumno = (alumno) => {
-    // Navegar a la vista AlumnoView y pasar el ID del alumno como parámetro
-    navigation.navigate('alumnoView', { id: alumno.id });
+  const editarAlumno = (Alumno) => {
+    // Navegar a la vista AlumnoEditView y pasar los datos del alumno como parámetro
+    navigation.navigate('AlumnoEditView', { alumnoData: Alumno });
+  };
+
+  const crearAlumno = () => {
+    // Navegar a la vista CrearAlumno para crear un nuevo alumno
+    navigation.navigate('CrearAlumno',);
   };
 
   const borrarAlumno = async (dni) => {
     try {
-      // Implementa aquí la lógica para borrar el alumno con el DNI proporcionado
+      const deleteUrl = `https://localhost:5001/api/Alumnos/${dni}`;
+      const response = await axios.delete(deleteUrl);
       console.log('Borrar alumno con DNI:', dni);
+      // Actualizar la lista de alumnos después de eliminar el alumno
+      obtenerAlumnos();
     } catch (error) {
       console.error('Error al borrar el alumno:', error);
     }
@@ -74,6 +82,9 @@ const Index_Alumnos = () => {
         keyExtractor={(item) => (item.id !== undefined ? item.id.toString() : item.DNI)}
         renderItem={renderAlumnoItem}
       />
+      <TouchableOpacity style={styles.crearButton} onPress={crearAlumno}>
+        <Text style={styles.crearButtonText}>Crear</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -122,6 +133,19 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   buttonText: {
+    color: '#fff',
+    textAlign: 'center',
+  },
+  // Estilos para el botón "Crear"
+  crearButton: {
+    backgroundColor: '#007BFF',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 4,
+    alignSelf: 'flex-start',
+    marginTop: 16,
+  },
+  crearButtonText: {
     color: '#fff',
     textAlign: 'center',
   },
