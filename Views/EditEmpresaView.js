@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const url = 'https://localhost:5001/api/Empresa';
 
@@ -40,51 +41,50 @@ const EditEmpresaView = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.label}>Nombre:</Text>
-      <TextInput
-        style={styles.input}
-        value={nombre}
-        onChangeText={setNombre}
-      />
+    <LinearGradient colors={[  '#880E4F', '#1A237E']} style={styles.gradient}>
+      <View style={styles.container}>
+        <Text style={styles.label}>Nombre:</Text>
+        <TextInput style={styles.input} value={nombre} onChangeText={setNombre} />
 
-      <Text style={styles.label}>Teléfono:</Text>
-      <TextInput
-        style={styles.input}
-        value={telefono}
-        onChangeText={setTelefono}
-      />
+        <Text style={styles.label}>Teléfono:</Text>
+        <TextInput style={styles.input} value={telefono} onChangeText={setTelefono} />
 
-      <Text style={styles.label}>Dirección:</Text>
-      <TextInput
-        style={styles.input}
-        value={direccion}
-        onChangeText={setDireccion}
-      />
+        <Text style={styles.label}>Dirección:</Text>
+        <TextInput style={styles.input} value={direccion} onChangeText={setDireccion} />
 
-      <TouchableOpacity style={styles.button} onPress={guardarCambios}>
-        <Text style={styles.buttonText}>Guardar Cambios</Text>
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity style={styles.button} onPress={guardarCambios}>
+          <Text style={styles.buttonText}>Guardar Cambios</Text>
+        </TouchableOpacity>
+      </View>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1,
+  },
   container: {
+    alignContent:'center',
+    alignItems:'center',
     flex: 1,
     padding: 16,
-    backgroundColor: '#fff',
+    color:'#fff',
+    backgroundColor: 'transparent', // Set the background to transparent since it's covered by the gradient
   },
   label: {
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 8,
+    color:'#fff',
   },
   input: {
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,
+    color:'#fff',
+    width:'50%',
     paddingHorizontal: 10,
     marginBottom: 16,
   },

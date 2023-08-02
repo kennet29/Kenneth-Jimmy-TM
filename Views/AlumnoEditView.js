@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const AlumnoEditView = ({ route }) => {
   const { alumnoData } = route.params;
@@ -34,7 +35,9 @@ const AlumnoEditView = ({ route }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      colors={[  '#880E4F', '#1A237E']}
+      style={styles.container}>
       <Text style={styles.label}>Nombre:</Text>
       <TextInput
         style={styles.input}
@@ -62,7 +65,7 @@ const AlumnoEditView = ({ route }) => {
       <TouchableOpacity style={styles.button} onPress={saveAlumno}>
         <Text style={styles.buttonText}>Guardar</Text>
       </TouchableOpacity>
-    </View>
+    </LinearGradient>
   );
 };
 
@@ -70,12 +73,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   label: {
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 8,
+    color: '#fff',
   },
   input: {
     height: 40,
@@ -84,6 +89,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     marginBottom: 16,
+    backgroundColor: '#fff',
+    width: '50%',
   },
   button: {
     backgroundColor: '#007BFF',
@@ -91,6 +98,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderRadius: 4,
     alignSelf: 'center',
+    width: '20%',
   },
   buttonText: {
     color: '#fff',

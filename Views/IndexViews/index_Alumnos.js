@@ -23,13 +23,11 @@ const Index_Alumnos = () => {
   };
 
   const editarAlumno = (Alumno) => {
-    // Navegar a la vista AlumnoEditView y pasar los datos del alumno como parámetro
     navigation.navigate('AlumnoEditView', { alumnoData: Alumno });
   };
 
   const crearAlumno = () => {
-    // Navegar a la vista CrearAlumno para crear un nuevo alumno
-    navigation.navigate('CrearAlumno',);
+    navigation.navigate('CrearAlumno');
   };
 
   const borrarAlumno = async (dni) => {
@@ -37,7 +35,6 @@ const Index_Alumnos = () => {
       const deleteUrl = `https://localhost:5001/api/Alumnos/${dni}`;
       const response = await axios.delete(deleteUrl);
       console.log('Borrar alumno con DNI:', dni);
-      // Actualizar la lista de alumnos después de eliminar el alumno
       obtenerAlumnos();
     } catch (error) {
       console.error('Error al borrar el alumno:', error);
@@ -56,12 +53,7 @@ const Index_Alumnos = () => {
           <TouchableOpacity style={styles.button} onPress={() => editarAlumno(item)}>
             <Text style={styles.buttonText}>Editar</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.button, { backgroundColor: '#FF4500' }]}
-            onPress={() => borrarAlumno(item.DNI)}
-          >
-            <Text style={styles.buttonText}>Borrar</Text>
-          </TouchableOpacity>
+          
         </View>
       </View>
     );
@@ -69,7 +61,11 @@ const Index_Alumnos = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.tableHeader}>
+      <TouchableOpacity style={styles.crearButton} onPress={crearAlumno}>
+        <Text style={styles.crearButtonText}>Crear Alumno</Text>
+      </TouchableOpacity> 
+      
+      <View style={[styles.tableHeader, styles.borderBottom]}>
         <Text style={styles.headerText}>DNI</Text>
         <Text style={styles.headerText}>Direccion</Text>
         <Text style={styles.headerText}>Nombre</Text>
@@ -81,10 +77,8 @@ const Index_Alumnos = () => {
         data={alumnos}
         keyExtractor={(item) => (item.id !== undefined ? item.id.toString() : item.DNI)}
         renderItem={renderAlumnoItem}
+        style={styles.table}
       />
-      <TouchableOpacity style={styles.crearButton} onPress={crearAlumno}>
-        <Text style={styles.crearButtonText}>Crear</Text>
-      </TouchableOpacity>
     </View>
   );
 };
@@ -94,14 +88,20 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     backgroundColor: '#fff',
+    borderColor:'000',
   },
   tableHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderBottomWidth: 1,
-    borderColor: '#ccc',
+    borderRadius:10,
+    borderColor: '#333', // Dark border color
     paddingVertical: 8,
     backgroundColor: '#40E0D0',
+  },
+  borderBottom: {
+    borderBottomWidth: 1,
+    borderColor: '#333', // Dark border color
   },
   headerText: {
     flex: 1,
@@ -112,8 +112,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderBottomWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#000', // Dark border color
     paddingVertical: 8,
+    borderRadius:'10',
   },
   alumnoText: {
     flex: 1,
@@ -138,16 +139,20 @@ const styles = StyleSheet.create({
   },
   // Estilos para el botón "Crear"
   crearButton: {
-    backgroundColor: '#007BFF',
+    backgroundColor: '#DD0000',
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderRadius: 4,
-    alignSelf: 'flex-start',
-    marginTop: 16,
+    alignSelf: 'center', // Align the button in the center horizontally
+    marginTop: 8,
+    marginBottom: 5,
   },
   crearButtonText: {
     color: '#fff',
     textAlign: 'center',
+  },
+  table: {
+    flex: 0.8, // Occupies 90% of the available space
   },
 });
 

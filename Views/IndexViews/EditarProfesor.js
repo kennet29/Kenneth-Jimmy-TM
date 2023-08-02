@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
 import { useRoute, useNavigation } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const EditarProfesor = () => {
   const route = useRoute();
@@ -42,59 +43,47 @@ const EditarProfesor = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.label}>DNI:</Text>
-      <TextInput
-        style={styles.input}
-        value={dni}
-        onChangeText={setDni}
-      />
+    <LinearGradient colors={['#880E4F', '#1A237E']} style={styles.gradient}>
+      <View style={styles.container}>
+        <Text style={styles.label}>DNI:</Text>
+        <TextInput style={styles.input} value={dni} onChangeText={setDni} />
 
-      <Text style={styles.label}>Nombre:</Text>
-      <TextInput
-        style={styles.input}
-        value={nombre}
-        onChangeText={setNombre}
-      />
+        <Text style={styles.label}>Nombre:</Text>
+        <TextInput style={styles.input} value={nombre} onChangeText={setNombre} />
 
-      <Text style={styles.label}>Apellidos:</Text>
-      <TextInput
-        style={styles.input}
-        value={apellidos}
-        onChangeText={setApellidos}
-      />
+        <Text style={styles.label}>Apellidos:</Text>
+        <TextInput style={styles.input} value={apellidos} onChangeText={setApellidos} />
 
-      <Text style={styles.label}>Dirección:</Text>
-      <TextInput
-        style={styles.input}
-        value={direccion}
-        onChangeText={setDireccion}
-      />
+        <Text style={styles.label}>Dirección:</Text>
+        <TextInput style={styles.input} value={direccion} onChangeText={setDireccion} />
 
-      <Text style={styles.label}>Teléfono:</Text>
-      <TextInput
-        style={styles.input}
-        value={telefono}
-        onChangeText={setTelefono}
-      />
+        <Text style={styles.label}>Teléfono:</Text>
+        <TextInput style={styles.input} value={telefono} onChangeText={setTelefono} />
 
-      <TouchableOpacity style={styles.button} onPress={handleGuardarCambios}>
-        <Text style={styles.buttonText}>Guardar Cambios</Text>
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity style={styles.button} onPress={handleGuardarCambios}>
+          <Text style={styles.buttonText}>Guardar Cambios</Text>
+        </TouchableOpacity>
+      </View>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1,
+  },
   container: {
+    alignItems: 'center',
+    justifyContent: 'center',
     flex: 1,
     padding: 16,
-    backgroundColor: '#fff',
+    backgroundColor: 'transparent', // Set the background to transparent since it's covered by the gradient
   },
   label: {
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 8,
+    color:'#fff',
   },
   input: {
     height: 40,
@@ -103,6 +92,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     marginBottom: 16,
+    width: '50%',
+    color:'#fff',
   },
   button: {
     backgroundColor: '#007BFF',

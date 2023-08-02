@@ -61,6 +61,9 @@ const Index_Empresas = () => {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity style={styles.crearButton} onPress={handleCrear}>
+        <Text style={styles.crearButtonText}>Crear Empresa</Text>
+      </TouchableOpacity>
       <View style={[styles.tablaContainer, { height: tableHeight }]}>
         <View style={styles.cabecera}>
           <Text style={[styles.text, styles.cabeceraText]}>CIF</Text>
@@ -75,9 +78,6 @@ const Index_Empresas = () => {
           keyExtractor={(item) => item.CIF}
         />
       </View>
-      <TouchableOpacity style={styles.crearButton} onPress={handleCrear}>
-        <Text style={styles.crearButtonText}>Crear Empresa</Text>
-      </TouchableOpacity>
     </View>
   );
 };
@@ -144,11 +144,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   crearButton: {
-    backgroundColor: '#2ecc71',
+    backgroundColor: '#e74c3c',
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 5,
-    marginTop: 10,
+    marginBottom: 10,
   },
   crearButtonText: {
     color: '#fff',

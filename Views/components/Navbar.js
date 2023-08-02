@@ -20,9 +20,7 @@ const Navbar = () => {
   const navigateToProfesores = () => {
     navigation.navigate('Profesores');
   };
-  const navigateToInfoCurso = () => {
-    navigation.navigate('Informacion_Cursos');
-  };
+ 
   const navigateToAlumnoView = () => {
     navigation.navigate('AlumnoView', { Alumno });
   };
@@ -41,9 +39,7 @@ const Navbar = () => {
       <TouchableOpacity style={styles.button} onPress={navigateToProfesores}>
         <Text style={styles.buttonText}>Profesores</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={navigateToInfoCurso}>
-        <Text style={styles.buttonText}>Info. Curso</Text>
-      </TouchableOpacity>
+      
     </View>
   );
 };

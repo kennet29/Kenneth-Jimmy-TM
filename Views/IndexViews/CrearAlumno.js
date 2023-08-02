@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const url = 'https://localhost:5001/api/Alumnos';
 
@@ -39,8 +40,23 @@ const CrearAlumno = () => {
     }
   };
 
+  const limpiarCampos = () => {
+    setId('');
+    setNombre('');
+    setDireccion('');
+    setTelefono('');
+    setEdad('');
+  };
+
+  // Calculate 80% of the screen height
+  const screenHeight = Dimensions.get('window').height;
+  const formHeight = screenHeight * 0.8;
+
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      colors={['#880E4F', '#1A237E']}
+      style={[styles.container, { height: formHeight, justifyContent: 'center' }]}
+    >
       <Text style={styles.label}>ID:</Text>
       <TextInput
         style={styles.input}
@@ -79,7 +95,11 @@ const CrearAlumno = () => {
       <TouchableOpacity style={styles.button} onPress={guardarAlumno}>
         <Text style={styles.buttonText}>Guardar</Text>
       </TouchableOpacity>
-    </View>
+
+      <TouchableOpacity style={styles.button} onPress={limpiarCampos}>
+        <Text style={styles.buttonText}>Cancelar</Text>
+      </TouchableOpacity>
+    </LinearGradient>
   );
 };
 
@@ -87,27 +107,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   label: {
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 8,
+    color: '#fff',
   },
   input: {
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 10,
     paddingHorizontal: 10,
     marginBottom: 16,
+    backgroundColor: '#fff',
+    width: '50%',
   },
   button: {
     backgroundColor: '#007BFF',
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderRadius: 4,
+    margin:10,
     alignSelf: 'center',
+    width: '25%',
   },
   buttonText: {
     color: '#fff',

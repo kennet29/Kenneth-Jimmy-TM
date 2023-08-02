@@ -17,6 +17,7 @@ import CrearEmpresaView from './Views/IndexViews/CrearEmpresaView'; // Importa l
 import index_Profesores from './Views/IndexViews/index_Profesores';
 import EditarProfesor from './Views/IndexViews/EditarProfesor';
 import CrearProfesorView from './Views/IndexViews/CrearProfesorView';
+import EditEmpresaView from './Views/EditEmpresaView';
 
 const Stack = createStackNavigator();
 
@@ -41,7 +42,7 @@ export default function App() {
         <Stack.Screen name="Empresas" component={Index_Empresas} />
         <Stack.Screen name="Perfil" component={CursoView} />
         <Stack.Screen name="Profesores" component={index_Profesores} />
-        <Stack.Screen name="Informacion_Cursos"  />
+       
 
         <Stack.Screen
           name="AlumnoEditView"
@@ -58,6 +59,11 @@ export default function App() {
         <Stack.Screen
           name="CrearEmpresaView"
           component={CrearEmpresaView}
+          options={{ headerTitle: 'Crear Nueva Empresa' }}
+        />
+        <Stack.Screen
+          name="EditEmpresaView"
+          component={EditEmpresaView}
           options={{ headerTitle: 'Crear Nueva Empresa' }}
         />
 
